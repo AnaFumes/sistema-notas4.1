@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <windows.h>
+#include <fstream>
 using namespace std;
 
 int main(){
@@ -12,8 +14,7 @@ float notas[20][5];
 float media[20];
 int qtdDisciplinas;
 
-//PROCESSAMENTO ----------------------------------------
-
+// Commit 1 
 cout << " === SISTEMA NOTAS v4.0 === " << endl;
 
 do{
@@ -28,6 +29,8 @@ for (int i = 0; i < qtdAlunos; i++) {
     cout << " Nome do Aluno: " << i + 1 << " : ";
     getline(cin, nomes[i]); // Pega a linha inteira entao ele e otimo para nomes compostos 
 }
+
+// Commit 2
 
 do{
 cout << "\n Quatidade de disciplinas: ( De 1 a 5 ): " << endl;
@@ -54,6 +57,8 @@ for ( int i = 0; i < qtdAlunos; i++){
     cout << " " << i + 1 << " " << nomes[i] << endl;
 }
 
+// Commit 3 
+
 cout << " \n====== RELATORIO ====== " << endl;
 int aprovados = 0, recuperacao = 0, reprovados = 0;
 
@@ -76,6 +81,29 @@ for (int i = 0; i < qtdAlunos; i++){
     
     cout << " \nResumo: " << aprovados << "aprovados, "<< recuperacao << " recuperacao " << reprovados << " reprovados " << endl;
 }
+    // Commit 4 
+
+    ofstream arquivo ("relatorio.txt");
+    if (arquivo. is_open()){
+        arquivo << "=== RELATORIO === " << endl;
+        for ( int i = 0; i < qtdAlunos; i++ ){
+            arquivo << nomes[i] << " Media: " << media[i] << " - ";
+            if  (media[i] >= 7 ){
+                arquivo << " aprovado " << endl;   
+            }else if (media[i] >= 5 ){
+                arquivo << " Recuperacao " << endl;
+            }else {
+                arquivo << " Reprovados " << endl;
+            }
+        }    
+     arquivo << " \nResumo: " << aprovados << " aprovados " << recuperacao << " em recuperacao " << reprovados << " Reprovados " << endl;
+     arquivo.close();
+     cout << "\nRelatorio salvo em relatorio.txt " << endl;
+
+     }else {
+        cout << " Erro ao criar arquivo. " << endl;
+     }
+
     return 0;
 }
 
