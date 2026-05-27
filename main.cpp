@@ -13,9 +13,30 @@ int qtdAlunos; //qtd- quantidade de
 float notas[20][5];
 float media[20];
 int qtdDisciplinas;
+int opcaoInicial;
 
 // Commit 1 
+
 cout << " === SISTEMA NOTAS v4.0 === " << endl;
+cout << " 1- Novo relatorio " << endl;
+cout << " 2- Ver relatorio salvo " << endl;
+cout << " Escolha uma opcao: ";
+cin >> opcaoInicial;
+
+// Commit 5 
+if (opcaoInicial == 2 ){ // == operador de comperação
+ifstream leitura ("relatorio.txt");
+if (leitura. is_open()) {
+    string linha;
+    cout << "\n";
+    while (getline (leitura,linha)){
+        cout << linha << endl;
+    }
+    leitura.close();
+}else {
+    cout << " Nenhum relatorio encontrado " << endl;
+}
+}  
 
 do{
     cout << " Quantidade de Alunos ( 1 a 20 ): ";
