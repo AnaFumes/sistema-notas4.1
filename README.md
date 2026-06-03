@@ -51,19 +51,28 @@ Siga os passos abaixo para clonar, compilar e rodar a aplicação na sua máquin
 
 * Data e horario do relatorio: Wed Jun  3 12:00:00 2026
 
-============================
-         RELATORIO          
-============================
+📝 Exemplo de Saída no Arquivo
+* ============================
+*          RELATORIO          
+* ============================
 * Ana Beatriz Media: 8.5 -  aprovado 
 * Bruno Lima Media: 5.2 -  Recuperacao 
 * Carlos Melo Media: 3.8 -  Reprovados 
 
+
 * Resumo: 1 aprovados 1 em recuperacao 1 Reprovados
 
+📂 Estrutura do Projeto
 * sistema-notas/
 * ├── main.cpp  
 * ├── relatorio.txt  
-* └── README.md        
+* └── README.md   
+
+👩‍💻 Autora
+Desenvolvido com 💙 por Ana Beatriz Zancanaro Fumes
+
+Turma: LOPAL 2026
+Instituição: SENAI-SP
 
 
 
