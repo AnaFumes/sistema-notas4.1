@@ -20,7 +20,7 @@ int opcaoInicial;
 
 do {
 cout << "\n===========================" << endl;
-cout << "     SISTEMA NOTAS v4.0    " << endl;
+cout << "     SISTEMA NOTAS v4.1    " << endl;
 cout << "===========================" << endl;
 cout << " 1- Novo relatorio " << endl;
 cout << " 2- Ver relatorio salvo " << endl;
