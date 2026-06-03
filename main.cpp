@@ -2,14 +2,15 @@
 #include <string>
 #include <windows.h>
 #include <fstream>
+#include <ctime>
 using namespace std;
 
 int main(){
 
-//ENTRADA --------------------------------------------
+//ENTRADA 
 
 string nomes[20];
-int qtdAlunos; //qtd- quantidade de 
+int qtdAlunos; 
 float notas[20][5];
 float media[20];
 int qtdDisciplinas;
@@ -29,16 +30,20 @@ cin >> opcaoInicial;
 
 // Commit 5 
 
-if (opcaoInicial == 2 ){ // == operador de comperação
+if (opcaoInicial == 2 ){
+
 ifstream leitura ("relatorio.txt");
-if (leitura. is_open()) {
+if (leitura.is_open()) {
     string linha;
     cout << "\n";
-    while (getline (leitura,linha)){
+    while (getline (leitura,linha))
+    {
         cout << linha << endl;
     }
     leitura.close();
-}else {
+
+}else 
+{
     cout << " Nenhum relatorio encontrado " << endl;
 }
 }
@@ -57,7 +62,7 @@ if ( opcaoInicial == 3 ){
 } while ( opcaoInicial != 1 );
 
 do{
-    cout << " Quantidade de Alunos ( 1 a 20 ): ";
+    cout << " \n Quantidade de Alunos ( 1 a 20 ): ";
     cin >> qtdAlunos;
 
 }while ( qtdAlunos < 1 || qtdAlunos > 20 ); // while enquanto
@@ -65,24 +70,27 @@ do{
 cin.ignore();
 
 for (int i = 0; i < qtdAlunos; i++) {
+
     cout << " Nome do Aluno: " << i + 1 << " : ";
     getline(cin, nomes[i]); // Pega a linha inteira entao ele e otimo para nomes compostos 
 }
 
 // Commit 2
 
-do{
-cout << "\n Quatidade de disciplinas: ( De 1 a 5 ): " << endl;
+do {
+cout << " \nQuatidade de disciplinas: ( De 1 a 5 ): ";
 cin >> qtdDisciplinas;
 
-}while(qtdDisciplinas < 1 || qtdDisciplinas > 5 );
+} while(qtdDisciplinas < 1 || qtdDisciplinas > 5 );
 
-for (int i = 0; i < qtdAlunos; i++){
+for (int i = 0; i < qtdAlunos; i++)
+{
     cout << " \nNotas de " << nomes[i] << " : " << endl;
     float soma = 0;
     for (int j = 0 ; j < qtdDisciplinas; j++){
+
         do{
-            cout << " Disciplina " << j + 1 << " ( 1 a 5 ): ";
+            cout << " Nota da Disciplina " << j + 1 << " ( 1 a 5 ): ";
             cin >> notas[i][j];
         } while (notas[i][j] < 0 || notas[i][j] > 10 );
         soma += notas [i][j];
@@ -90,11 +98,10 @@ for (int i = 0; i < qtdAlunos; i++){
     media [i] = soma /qtdDisciplinas;
 }
 
-
-
 //SAIDA -----------------------------------------------------
 cout << " \n Alunos cadastrados: " << endl;
-for ( int i = 0; i < qtdAlunos; i++){
+for ( int i = 0; i < qtdAlunos; i++)
+{
     cout << " " << i + 1 << " " << nomes[i] << endl;
 }
 
@@ -103,14 +110,17 @@ for ( int i = 0; i < qtdAlunos; i++){
 cout << " \n====== RELATORIO ====== " << endl;
 int aprovados = 0, recuperacao = 0, reprovados = 0;
 
-for (int i = 0; i < qtdAlunos; i++){
+for (int i = 0; i < qtdAlunos; i++)
+{
     cout << nomes[i] << " Media: " << media[i] << " - ";
-    if (media [i] >= 5){
+    if (media [i] >= 5)
+    {
         cout << "Aprovado" << endl;
         aprovados++;
     }
 
-    else if (media[i] >= 5 ){
+    else if (media[i] >= 5 )
+    {
     cout << " Recuperaçao " << endl;
     recuperacao++;
     }
@@ -123,11 +133,19 @@ for (int i = 0; i < qtdAlunos; i++){
     cout << " \nResumo: " << aprovados << "aprovados, "<< recuperacao << " recuperacao " << reprovados << " reprovados " << endl;
 }
     // Commit 4 
-
     ofstream arquivo ("relatorio.txt");
+
     if (arquivo. is_open()){
-        arquivo << "=== RELATORIO === " << endl;
-        for ( int i = 0; i < qtdAlunos; i++ ){
+        time_t agora = time(0);
+        char* dataHora = ctime(&agora);
+        arquivo << "Data e horario do relatorio: " << dataHora << endl; 
+    
+        arquivo << "============================" << endl;
+        arquivo << "         RELATORIO          " << endl;
+        arquivo << "============================" << endl;
+
+        for ( int i = 0; i < qtdAlunos; i++ )
+        {
             arquivo << nomes[i] << " Media: " << media[i] << " - ";
             if  (media[i] >= 7 ){
                 arquivo << " aprovado " << endl;   
@@ -137,11 +155,14 @@ for (int i = 0; i < qtdAlunos; i++){
                 arquivo << " Reprovados " << endl;
             }
         }    
+
      arquivo << " \nResumo: " << aprovados << " aprovados " << recuperacao << " em recuperacao " << reprovados << " Reprovados " << endl;
      arquivo.close();
      cout << "\nRelatorio salvo em relatorio.txt " << endl;
 
-     }else {
+     } else 
+
+     {
         cout << " Erro ao criar arquivo. " << endl;
      }
 

@@ -1,5 +1,10 @@
-=== RELATORIO === 
-bia Media: 7 -  aprovado 
-soph Media: 6 -  Recuperacao 
+Data e horario do relatorio: Wed Jun 03 09:40:01 2026
+
+
+========================
+         RELATORIO       
+===========================
+Bia Media: 8.5 -  aprovado 
+isa Media: 9 -  aprovado 
  
 Resumo: 2 aprovados 0 em recuperacao 0 Reprovados 
