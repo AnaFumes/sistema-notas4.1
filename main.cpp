@@ -73,6 +73,12 @@ for (int i = 0; i < qtdAlunos; i++) {
 
     cout << " Nome do Aluno: " << i + 1 << " : ";
     getline(cin, nomes[i]); // Pega a linha inteira entao ele e otimo para nomes compostos 
+if (nomes[i]== ""){
+    do {
+        cout << " Nome do aluno " << i + 1 << ":";
+        getline(cin,nomes [i]);
+    }while (nomes[i] == "");
+}
 }
 
 // Commit 2
