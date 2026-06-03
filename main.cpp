@@ -17,13 +17,18 @@ int opcaoInicial;
 
 // Commit 1 
 
-cout << " === SISTEMA NOTAS v4.0 === " << endl;
+do {
+cout << "\n===========================" << endl;
+cout << "     SISTEMA NOTAS v4.0    " << endl;
+cout << "===========================" << endl;
 cout << " 1- Novo relatorio " << endl;
 cout << " 2- Ver relatorio salvo " << endl;
+cout << " 3- Sobre o sistema " << endl;
 cout << " Escolha uma opcao: ";
 cin >> opcaoInicial;
 
 // Commit 5 
+
 if (opcaoInicial == 2 ){ // == operador de comperação
 ifstream leitura ("relatorio.txt");
 if (leitura. is_open()) {
@@ -36,7 +41,20 @@ if (leitura. is_open()) {
 }else {
     cout << " Nenhum relatorio encontrado " << endl;
 }
-}  
+}
+
+if ( opcaoInicial == 3 ){
+
+    cout << "\n==========================" << endl;
+    cout << "      SOBRE O SISTEMA     " << endl;
+    cout << "==========================" << endl;
+    cout << " Sistema de notas v4.1    " <<endl;
+    cout << " Desenvolvido por: Ana Beatriz Zancanaro Fumes " << endl;
+    cout << " Turma: LOPAL 2026 - SENAI-SP " << endl;
+    cout << "===========================" << endl;
+}
+
+} while ( opcaoInicial != 1 );
 
 do{
     cout << " Quantidade de Alunos ( 1 a 20 ): ";
@@ -71,6 +89,8 @@ for (int i = 0; i < qtdAlunos; i++){
     }
     media [i] = soma /qtdDisciplinas;
 }
+
+
 
 //SAIDA -----------------------------------------------------
 cout << " \n Alunos cadastrados: " << endl;
