@@ -49,17 +49,17 @@ Siga os passos abaixo para clonar, compilar e rodar a aplicação na sua máquin
 
 # Exemplo de saída 📝
    ====== RELATORIO ======
-Ana Beatriz   Media: 8.50 - Aprovado
-Bruno Lima    Media: 5.20 - Recuperacao
-Carlos Melo   Media: 3.80 - Reprovado
+* ** Ana Beatriz   Media: 8.50 - Aprovado
+* ** Bruno Lima    Media: 5.20 - Recuperacao
+* ** Carlos Melo   Media: 3.80 - Reprovado
 
 Resumo: 1 aprovados, 1 recuperacao, 1 reprovados
 
  # Estrutura do Projeto 📂
-sistema-notas/
-├── main.cpp         # Código-fonte principal em C++
-├── relatorio.txt    # Ficheiro de persistência gerado automaticamente
-└── README.md        # Documentação técnica do projeto
+* sistema-notas/
+* ├── main.cpp         # Código-fonte principal em C++
+* ├── relatorio.txt    # Ficheiro de persistência gerado automaticamente
+* └── README.md        # Documentação técnica do projeto
 
 👩‍💻 Autora
 Feito por Ana Beatriz Zancanaro Fumes- Turma LOPAL 2026- SENAI-SP 💙
