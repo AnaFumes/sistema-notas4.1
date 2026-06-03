@@ -1,86 +1,48 @@
 # Sistema de Notas v4.0
-Gerenciamento escolar de notas e médias em C++
+> Gerenciamento escolar de notas e médias em C++
 
-📖 Sobre o Projeto
-Sistema de linha de comando para gerenciamento de notas escolares. Permite cadastrar alunos, lançar notas por disciplina, calcular médias e gerar relatórios persistidos em arquivo .txt.
+## 📖 Sobre o Projeto
+O **Sistema de Notas v4.0** é uma aplicação em linha de comando (CLI) projetada para o gerenciamento eficiente de notas escolares. O software permite o registo de alunos, lançamento de notas por disciplinas, cálculo automático de médias e exportação de relatórios detalhados persistidos em ficheiro físico `.txt`.
 
-✨ Funcionalidades
-✅ Cadastro de até 20 alunos com nome completo
-✅ Registro de notas para até 5 disciplinas por aluno
-✅ Cálculo automático de média por aluno
-✅ Classificação automática: Aprovado, Recuperação ou Reprovado
-✅ Resumo geral com contagem por situação
-✅ Salvar relatório em relatorio.txt
-✅ Visualizar relatório de sessões anteriores
-✅ Exibir informações sobre o sistema
+---
 
-🎯 Critérios de Avaliação
+## ✨ Funcionalidades
+* **Cadastro Estruturado:** Suporte para até 20 alunos com nome completo.
+* **Avaliação Multidisciplinar:** Registo de notas para até 5 disciplinas por aluno.
+* **Processamento Automático:** Cálculo em tempo real da média aritmética individual.
+* **Classificação de Status:** Definição automatizada da situação académica do aluno (Aprovado, Recuperação ou Reprovado).
+* **Métricas Gerais:** Resumo consolidado com a contagem total de alunos por situação.
+* **Persistência de Dados:** Gravação automática do relatório num ficheiro `relatorio.txt` com suporte para leitura de sessões anteriores.
+* **Painel Informativo:** Secção integrada com dados de autoria e versão do sistema.
 
-Média
-✅ Aprovado- ≥ 7,0  
-⚠️ Recuperação- ≥ 5,0 e < 7,0
-❌ Reprovado- < 5,0
+---
 
+## 🎯 Critérios de Avaliação
 
-🛠️ Tecnologias
-Linguagem: C++
-Bibliotecas: iostream, fstream, string, ctime, windows.h
-Compilador recomendado: g++ (MinGW) / MSVC
-Plataforma: Windows
+A classificação do corpo estudantil é determinada com base nas seguintes métricas de médias:
 
-🚀 Como Executar
-1. Clone o repositório
-bash
-git clone https://github.com/seu-usuario/sistema-notas.git
-cd sistema-notas
+| Situação | Critério Académico | Indicador Visual |
+| :--- | :--- | :---: |
+| **Aprovado** | Média $\ge$ 7.0 | ✅ |
+| **Recuperação** | Média entre 5.0 e 6.9 | ⚠️ |
+| **Reprovado** | Média < 5.0 | ❌ |
 
-2. Compile
-bash
-g++ main.cpp -o sistema_notas.exe
+---
 
-3. Execute
-bash
-./sistema_notas.exe
+## 🛠️ Tecnologias e Requisitos
+* **Linguagem:** C++ (Padrão ISO C++11 ou superior)
+* **Bibliotecas Standard:** `<iostream>`, `<fstream>`, `<string>`, `<ctime>`
+* **Dependência de OS:** `<windows.h>` (Utilizada para manipulação do ambiente de execução Windows)
+* **Compilador Recomendado:** GCC (MinGW) / MSVC (Microsoft Visual C++)
+* **Plataforma Alvo:** Windows
 
-🖥️ Como Usar
-Ao iniciar, o menu principal é exibido:
+---
 
-===========================
-     SISTEMA NOTAS v4.0    
-===========================
- 1- Novo relatorio
- 2- Ver relatorio salvo
- 3- Sobre o sistema
- Escolha uma opcao:
-Opção 1 — Novo Relatório:
+## 🚀 Como Executar
 
-Informe a quantidade de alunos (1 a 20)
-Digite o nome completo de cada aluno
-Informe a quantidade de disciplinas (1 a 5)
-Lance as notas de cada disciplina (0 a 10)
-O relatório é exibido e salvo automaticamente em relatorio.txt com data e hora
+Siga os passos abaixo para clonar, compilar e rodar a aplicação na sua máquina:
 
-Opção 2 — Ver Relatório Salvo:
-Exibe o último relatório gerado. Caso ainda não exista, uma mensagem de aviso é exibida.
-Opção 3 — Sobre o Sistema:
-Exibe informações sobre o sistema, nome do desenvolvedor e turma.
-
-📄 Exemplo de Saída
-====== RELATORIO ======
-Ana Beatriz   Media: 8.50 - Aprovado
-Bruno Lima    Media: 5.20 - Recuperacao
-Carlos Melo   Media: 3.80 - Reprovado
-
-Resumo: 1 aprovados, 1 recuperacao, 1 reprovados
-
-📂 Estrutura do Projeto
-sistema-notas/
-├── main.cpp         # Código-fonte principal
-├── relatorio.txt    # Gerado automaticamente na primeira execução
-└── README.md
-
-📌 Observações
-O programa usa <windows.h>, portanto é compatível apenas com Windows.
-
-👩‍💻 Autora
-Feito com 💙 por Ana Beatriz Zancanaro Fumes — Turma LOPAL 2026 - SENAI-SP
+1. **Clonar o Repositório:**
+   ```bash
+   git clone [https://github.com/seu-usuario/sistema-notas.git](https://github.com/seu-usuario/sistema-notas.git)
+   cd sistema-notas
