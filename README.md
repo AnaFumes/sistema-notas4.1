@@ -1,25 +1,24 @@
-# Sistema de Notas v4.0
-> Gerenciamento escolar de notas e médias em C++
+# Sistema de Notas v4.1
+> Gerenciamento escolar dinâmico de notas, médias e persistência de dados em C++.
 
 ## 📖 Sobre o Projeto
-O **Sistema de Notas v4.0** é uma aplicação em linha de comando (CLI) projetada para o gerenciamento eficiente de notas escolares. O software permite o registo de alunos, lançamento de notas por disciplinas, cálculo automático de médias e exportação de relatórios detalhados persistidos em ficheiro físico `.txt`.
+O **Sistema de Notas v4.1** é uma aplicação em linha de comando (CLI) projetada para o gerenciamento eficiente de registros escolares. O software permite o cadastro de alunos, lançamento de notas por disciplinas, cálculo automático de médias e a exportação/leitura de relatórios consolidados em arquivos físicos `.txt`, contando agora com registro cronológico (timestamp).
 
 ---
 
 ## ✨ Funcionalidades
-* **Cadastro Estruturado:** Suporte para até 20 alunos com nome completo.
-* **Avaliação Multidisciplinar:** Registo de notas para até 5 disciplinas por aluno.
-* **Processamento Automático:** Cálculo em tempo real da média aritmética individual.
-* **Classificação de Status:** Definição automatizada da situação académica do aluno (Aprovado, Recuperação ou Reprovado).
-* **Métricas Gerais:** Resumo consolidado com a contagem total de alunos por situação.
-* **Persistência de Dados:** Gravação automática do relatório num ficheiro `relatorio.txt` com suporte para leitura de sessões anteriores.
-* **Painel Informativo:** Secção integrada com dados de autoria e versão do sistema.
+* **Menu Interativo Inicial:** Escolha entre criar um novo relatório, ler dados de sessões anteriores ou visualizar informações de autoria.
+* **Cadastro Estruturado Dinâmico:** Suporte para até 20 alunos com validação de campos vazios para o nome do estudante.
+* **Avaliação Multidisciplinar Adaptável:** Registro customizado de 1 a 5 disciplinas por ciclo de avaliação.
+* **Cálculo Automático:** Processamento em tempo real da média aritmética individual de cada aluno.
+* **Persistência de Dados com Timestamp:** Gravação automatizada do relatório no arquivo `relatorio.txt`, registrando o dia e a hora exata da geração do documento.
+* **Leitura Integrada:** Visualização do relatório salvo diretamente no terminal sem precisar sair do programa.
 
 ---
 
 ## 🎯 Critérios de Avaliação
 
-A classificação do corpo estudantil é determinada com base nas seguintes métricas de médias:
+A classificação gerada no arquivo final é determinada com base nas seguintes métricas de médias:
 
 | Situação | Critério Académico | Indicador Visual |
 | :--- | :--- | :---: |
@@ -31,9 +30,12 @@ A classificação do corpo estudantil é determinada com base nas seguintes mét
 
 ## 🛠️ Tecnologias e Requisitos
 * **Linguagem:** C++ (Padrão ISO C++11 ou superior)
-* **Bibliotecas Standard:** `<iostream>`, `<fstream>`, `<string>`, `<ctime>`
-* **Dependência de OS:** `<windows.h>` (Utilizada para manipulação do ambiente de execução Windows)
-* **Compilador Recomendado:** GCC (MinGW) / MSVC (Microsoft Visual C++)
+* **Bibliotecas Standard Utilizadas:** * `<iostream>` (Entrada e saída de dados)
+  * `<string>` (Manipulação de cadeias de caracteres)
+  * `<fstream>` (Fluxo de arquivos para leitura/escrita)
+  * `<ctime>` (Captura de data e hora do sistema)
+* **Dependência de OS:** `<windows.h>`
+* **Compilador Recomendado:** GCC (MinGW) / MSVC
 * **Plataforma Alvo:** Windows
 
 ---
@@ -47,19 +49,22 @@ Siga os passos abaixo para clonar, compilar e rodar a aplicação na sua máquin
    git clone [https://github.com/seu-usuario/sistema-notas.git](https://github.com/seu-usuario/sistema-notas.git)
    cd sistema-notas
 
-# Exemplo de saída 📝
-   ====== RELATORIO ======
-* ** Ana Beatriz   Media: 8.50 - Aprovado
-* ** Bruno Lima    Media: 5.20 - Recuperacao
-* ** Carlos Melo   Media: 3.80 - Reprovado
+* Data e horario do relatorio: Wed Jun  3 12:00:00 2026
 
-Resumo: 1 aprovados, 1 recuperacao, 1 reprovados
+============================
+         RELATORIO          
+============================
+* Ana Beatriz Media: 8.5 -  aprovado 
+* Bruno Lima Media: 5.2 -  Recuperacao 
+* Carlos Melo Media: 3.8 -  Reprovados 
 
- # Estrutura do Projeto 📂
+* Resumo: 1 aprovados 1 em recuperacao 1 Reprovados
+
 * sistema-notas/
-* ├── main.cpp         # Código-fonte principal em C++
-* ├── relatorio.txt    # Ficheiro de persistência gerado automaticamente
-* └── README.md        # Documentação técnica do projeto
+* ├── main.cpp  
+* ├── relatorio.txt  
+* └── README.md        
 
-👩‍💻 Autora
-Feito por Ana Beatriz Zancanaro Fumes- Turma LOPAL 2026- SENAI-SP 💙
+
+
+

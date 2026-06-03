@@ -16,6 +16,7 @@ float media[20];
 int qtdDisciplinas;
 int opcaoInicial;
 
+
 // Commit 1 
 
 do {
