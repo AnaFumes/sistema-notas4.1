@@ -3,7 +3,7 @@
 # 📚 Sistema de Notas v4.1
 
 Sistema de gerenciamento de notas escolares desenvolvido em **C++**.  
-Permite cadastrar alunos, registrar notas por disciplina, calcular médias, classificar alunos e salvar/ler relatórios em arquivos de texto.
+Cadastra alunos, registra notas por disciplina, calcula médias, classifica o desempenho e salva relatórios em arquivo de texto.
 
 </div>
 
@@ -11,56 +11,60 @@ Permite cadastrar alunos, registrar notas por disciplina, calcular médias, clas
 
 ## ✨ Funcionalidades
 
-- 👤 Cadastro de até **20 alunos**
+- 👤 Cadastro de até **20 alunos** com suporte a nomes compostos
 - 📝 Registro de notas em até **5 disciplinas** por aluno
-- 🧮 Cálculo automático da média de cada aluno
-- 🔍 Validação de nome em branco
-- 💾 Salvamento de relatório em `relatorio.txt`
-- 📂 Leitura de relatórios salvos
-- ℹ️ Informações sobre o sistema
+- 🧮 Cálculo automático da **média** de cada aluno
+- 🏆 Identificação do aluno com **maior e menor média**
+- 🔍 Validação de nomes em branco e intervalo de notas (0 a 10)
+- 💾 Geração e salvamento de relatório em `relatorio.txt` com data e hora
+- 📂 Leitura de relatório salvo anteriormente
+- ℹ️ Tela de informações sobre o sistema
 
 ---
 
 ## 📊 Classificação por Desempenho
 
 | Status | Critério |
-|--------|----------|
+|:------:|----------|
 | ✅ **Aprovado** | Média ≥ 7,0 |
 | ⚠️ **Recuperação** | Média entre 5,0 e 6,9 |
 | ❌ **Reprovado** | Média < 5,0 |
 
 ---
 
-## 📋 Resumo Geral
+## 📋 Resumo do Relatório
 
 Ao final de cada relatório, o sistema exibe:
 
-- Quantidade de **aprovados**
-- Quantidade de alunos em **recuperação**
-- Quantidade de **reprovados**
+| Campo | Descrição |
+|-------|-----------|
+| Aprovados | Quantidade de alunos aprovados |
+| Recuperação | Quantidade de alunos em recuperação |
+| Reprovados | Quantidade de alunos reprovados |
+| 🏆 Maior média | Nome e média do aluno com melhor desempenho |
+| 📉 Menor média | Nome e média do aluno com menor desempenho |
 
 ---
 
 ## 💻 Pré-requisitos
 
-Compilador C++ compatível com **C++11 ou superior** (`g++`, `clang++`, etc.)
+| Requisito | Detalhe |
+|-----------|---------|
+| Compilador | C++11 ou superior (`g++`, `clang++`, MSVC) |
+| Sistema Operacional | **Windows** (o código utiliza `<windows.h>`) |
 
 ---
 
 ## 🚀 Como Compilar e Executar
 
-**Compilar:**
+**1. Compilar:**
 ```bash
 g++ -o sistema_notas main.cpp
 ```
 
-**Executar (Linux/macOS):**
+**2. Executar:**
 ```bash
-./sistema_notas
-```
-
-**Executar (Windows):**
-```bash
+# Windows
 sistema_notas.exe
 ```
 
@@ -68,7 +72,7 @@ sistema_notas.exe
 
 ## 📝 Como Usar
 
-Ao iniciar o programa, o seguinte menu será exibido:
+Ao iniciar o programa, será exibido o menu principal:
 
 ```
 ===========================
@@ -77,24 +81,25 @@ Ao iniciar o programa, o seguinte menu será exibido:
  1- Novo relatorio
  2- Ver relatorio salvo
  3- Sobre o sistema
+ Escolha uma opcao:
 ```
 
 ### Opção 1 — Novo Relatório
 
-1. Informe a quantidade de alunos (1 a 20)
-2. Digite o nome de cada aluno
-3. Informe a quantidade de disciplinas (1 a 5)
-4. Digite as notas (0 a 10)
-5. O sistema calcula as médias automaticamente
-6. O relatório é exibido e salvo em arquivo
+1. Informe a **quantidade de alunos** (1 a 20)
+2. Digite o **nome** de cada aluno (nomes compostos são aceitos)
+3. Informe a **quantidade de disciplinas** (1 a 5)
+4. Digite as **notas** de cada disciplina (0,0 a 10,0)
+5. O sistema calcula as médias e exibe o relatório completo
+6. O relatório é salvo automaticamente em `relatorio.txt`
 
 ### Opção 2 — Ver Relatório Salvo
 
-Exibe o conteúdo de `relatorio.txt`, caso ele exista.
+Lê e exibe o conteúdo de `relatorio.txt`. Caso o arquivo não exista, uma mensagem de aviso é exibida.
 
 ### Opção 3 — Sobre o Sistema
 
-Exibe informações sobre o sistema, desenvolvedor e turma.
+Exibe informações sobre a versão, desenvolvedora e turma.
 
 ---
 
@@ -102,8 +107,8 @@ Exibe informações sobre o sistema, desenvolvedor e turma.
 
 ```
 .
-├── main.cpp
-├── relatorio.txt
+├── main.cpp         # Código-fonte principal
+├── relatorio.txt    # Gerado automaticamente após o primeiro relatório
 └── README.md
 ```
 
@@ -111,18 +116,18 @@ Exibe informações sobre o sistema, desenvolvedor e turma.
 
 ## 📌 Observações
 
-- Notas devem estar entre **0 e 10**
-- Nomes em branco **não são permitidos**
-- Nomes com espaços são aceitos
+- Notas devem estar entre **0 e 10** (validação automática)
+- Nomes em branco **não são aceitos** — o sistema solicita novamente
 - O relatório inclui **data e hora** da geração
-- O programa utiliza `<windows.h>`, sendo voltado para **Windows**
+- O arquivo `relatorio.txt` é **sobrescrito** a cada novo relatório gerado
+- O programa utiliza `<windows.h>`, portanto é **exclusivo para Windows**
 
 ---
 
 ## 🤝 Contribuindo
 
 Contribuições são bem-vindas!  
-Sinta-se à vontade para abrir uma [issue](../../issues) ou enviar um [pull request](../../pulls).
+Abra uma [issue](../../issues) para relatar problemas ou sugerir melhorias, ou envie um [pull request](../../pulls) com suas alterações.
 
 ---
 
@@ -134,4 +139,3 @@ Sinta-se à vontade para abrir uma [issue](../../issues) ou enviar um [pull requ
 Turma: **LOPAL 2026 — SENAI-SP**
 
 </div>
-
