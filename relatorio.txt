@@ -1,11 +1,11 @@
-Data e horario do relatorio: Wed Jun 10 08:38:18 2026
+Data e horario do relatorio: Wed Jun 10 11:34:29 2026
 
 ============================
          RELATORIO          
 ============================
-cacau Media: 9.5 -  aprovado 
-liz Media: 9 -  aprovado 
- Resumo: 2 aprovados ,0 em recuperacao ,0 Reprovados. 
-  
-Media maior: cacau - 9.5
- Media menor: liz - 9
+bia Media: 5.5 -  Recuperacao 
+isa Media: 6.5 -  Recuperacao 
+ Resumo: 0 aprovados ,2 em recuperacao ,0 Reprovados. 
+ 
+Media maior: isa - 6.5
+Media menor: bia - 5.5
