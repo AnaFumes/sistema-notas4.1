@@ -1,79 +1,94 @@
-# Sistema de Notas v4.1
-> Gerenciamento escolar dinâmico de notas, médias e persistência de dados em C++.
-
-## 📖 Sobre o Projeto
-O **Sistema de Notas v4.1** é uma aplicação em linha de comando (CLI) projetada para o gerenciamento eficiente de registros escolares. O software permite o cadastro de alunos, lançamento de notas por disciplinas, cálculo automático de médias e a exportação/leitura de relatórios consolidados em arquivos físicos `.txt`, contando agora com registro cronológico (timestamp).
-
----
-
-## ✨ Funcionalidades
-* **Menu Interativo Inicial:** Escolha entre criar um novo relatório, ler dados de sessões anteriores ou visualizar informações de autoria.
-* **Cadastro Estruturado Dinâmico:** Suporte para até 20 alunos com validação de campos vazios para o nome do estudante.
-* **Avaliação Multidisciplinar Adaptável:** Registro customizado de 1 a 5 disciplinas por ciclo de avaliação.
-* **Cálculo Automático:** Processamento em tempo real da média aritmética individual de cada aluno.
-* **Persistência de Dados com Timestamp:** Gravação automatizada do relatório no arquivo `relatorio.txt`, registrando o dia e a hora exata da geração do documento.
-* **Leitura Integrada:** Visualização do relatório salvo diretamente no terminal sem precisar sair do programa.
-
----
-
-## 🎯 Critérios de Avaliação
-
-A classificação gerada no arquivo final é determinada com base nas seguintes métricas de médias:
-
-| Situação | Critério Académico | Indicador Visual |
-| :--- | :--- | :---: |
-| **Aprovado** | Média $\ge$ 7.0 | ✅ |
-| **Recuperação** | Média entre 5.0 e 6.9 | ⚠️ |
-| **Reprovado** | Média < 5.0 | ❌ |
-
----
-
-## 🛠️ Tecnologias e Requisitos
-* **Linguagem:** C++ (Padrão ISO C++11 ou superior)
-* **Bibliotecas Standard Utilizadas:** * `<iostream>` (Entrada e saída de dados)
-  * `<string>` (Manipulação de cadeias de caracteres)
-  * `<fstream>` (Fluxo de arquivos para leitura/escrita)
-  * `<ctime>` (Captura de data e hora do sistema)
-* **Dependência de OS:** `<windows.h>`
-* **Compilador Recomendado:** GCC (MinGW) / MSVC
-* **Plataforma Alvo:** Windows
-
----
-
-## 🚀 Como Executar
-
-Siga os passos abaixo para clonar, compilar e rodar a aplicação na sua máquina:
-
-1. **Clonar o Repositório:**
-   ```bash
-   git clone [https://github.com/seu-usuario/sistema-notas.git](https://github.com/seu-usuario/sistema-notas.git)
-   cd sistema-notas
-
-* Data e horario do relatorio: Wed Jun  3 12:00:00 2026
-
-📝 Exemplo de Saída no Arquivo
-* ============================
-*          RELATORIO          
-* ============================
-* Ana Beatriz Media: 8.5 -  aprovado 
-* Bruno Lima Media: 5.2 -  Recuperacao 
-* Carlos Melo Media: 3.8 -  Reprovados 
+# 📚 Sistema de Notas v4.1
+Sistema de gerenciamento de notas escolares desenvolvido em C++. Permite cadastrar alunos, registrar notas por disciplina, calcular médias, classificar alunos e salvar/ler relatórios em arquivos de texto.
 
 
-* Resumo: 1 aprovados 1 em recuperacao 1 Reprovados
-
-📂 Estrutura do Projeto
-* sistema-notas/
-* ├── main.cpp  
-* ├── relatorio.txt  
-* └── README.md   
-
-👩‍💻 Autora
-Desenvolvido com 💙 por Ana Beatriz Zancanaro Fumes
-
-Turma: LOPAL 2026
-Instituição: SENAI-SP
+# ✨ Funcionalidades
+Cadastro de até 20 alunos
+Registro de notas em até 5 disciplinas por aluno
+Cálculo automático da média de cada aluno
+Validação de nome em branco
+Salvamento de relatório em relatorio.txt
+Leitura de relatórios salvos
+Informações sobre o sistema
 
 
+📊 Classificação por desempenho
+✅ Aprovado — média ≥ 7,0
+⚠️ Recuperação — média entre 5,0 e 6,9
+❌ Reprovado — média < 5,0
+
+
+📋 Resumo Geral
+O sistema exibe:
+
+Quantidade de aprovados
+Quantidade de alunos em recuperação
+Quantidade de reprovados
+
+
+# 💻 Pré-requisitos
+Compilador C++ compatível com C++11 ou superior (g++, clang++, etc.)
+
+
+🚀 Como compilar e executar
+Compilar
+g++ -o sistema_notas main.cpp
+
+Executar
+./sistema_notas
+
+No Windows, utilize:
+
+sistema_notas.exe
+
+
+# 📝 Como usar
+Ao iniciar o programa, será exibido o menu:
+
+===========================
+     SISTEMA NOTAS v4.1
+===========================
+ 1- Novo relatorio
+ 2- Ver relatorio salvo
+ 3- Sobre o sistema
+
+Opção 1 — Novo Relatório
+Informe a quantidade de alunos (1 a 20)
+Digite o nome de cada aluno
+Informe a quantidade de disciplinas (1 a 5)
+Digite as notas (0 a 10)
+O sistema calcula as médias automaticamente
+O relatório é exibido e salvo em arquivo
+
+Opção 2 — Ver relatório salvo
+Exibe o conteúdo de relatorio.txt, caso ele exista.
+
+Opção 3 — Sobre o sistema
+Exibe informações sobre o sistema, desenvolvedor e turma.
+
+
+# 📁 Estrutura do projeto
+.
+├── main.cpp
+├── relatorio.txt
+└── README.md
+
+
+# 📌 Observações
+Notas devem estar entre 0 e 10
+Nomes em branco não são permitidos
+Nomes com espaços são aceitos
+O relatório inclui data e hora da geração
+O programa utiliza <windows.h>, sendo voltado para Windows
+
+
+# 🤝 Contribuindo
+Contribuições são bem-vindas. Sinta-se à vontade para abrir uma issue ou enviar um pull request.
+
+
+👩‍💻 Desenvolvedora
+Ana Beatriz Zancanaro Fumes
+
+Turma: LOPAL 2026 — SENAI-SP
 
 
