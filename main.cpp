@@ -117,6 +117,10 @@ for ( int i = 0; i < qtdAlunos; i++)
 cout << " \n====== RELATORIO ====== " << endl;
 int aprovados = 0, recuperacao = 0, reprovados = 0;
 
+int menor = 0;
+int maior = 0;
+
+
 for (int i = 0; i < qtdAlunos; i++)
 {
     cout << nomes[i] << " Media: " << media[i] << " - ";
@@ -136,9 +140,23 @@ for (int i = 0; i < qtdAlunos; i++)
         cout << " Reprovados " << endl;
         reprovados++;
     }
-    
-    cout << " \nResumo: " << aprovados << "aprovados, "<< recuperacao << " recuperacao " << reprovados << " reprovados " << endl;
-}
+   
+    // OPCIONAL B
+
+    if (media[i] > media[maior])
+    {
+        maior = i;
+    }
+    if (media[i] < media[menor])
+    {
+        menor = i;
+    }
+    }
+    cout << " \nResumo: " << aprovados << " aprovados, "<< recuperacao << " recuperacao, " << reprovados << " reprovados. " << endl;
+ 
+    cout << " \nMedia maior: " << nomes[maior] << " - " << media[maior] << endl;
+    cout << "Media menor: " << nomes[menor] <<  " - " << media[menor] << endl;
+
     // Commit 4 
     ofstream arquivo ("relatorio.txt");
 
@@ -163,7 +181,11 @@ for (int i = 0; i < qtdAlunos; i++)
             }
         }    
 
-     arquivo << " \nResumo: " << aprovados << " aprovados " << recuperacao << " em recuperacao " << reprovados << " Reprovados " << endl;
+     arquivo << " Resumo: " << aprovados << " aprovados " << "," << recuperacao << " em recuperacao " << ","<< reprovados << " Reprovados. " << endl;
+     arquivo << " \nMedia maior: " << nomes[maior] << " - " << media[maior] << endl;
+     arquivo << "Media menor: " << nomes[menor] << " - " <<media[menor]  << endl;
+
+
      arquivo.close();
      cout << "\nRelatorio salvo em relatorio.txt " << endl;
 
